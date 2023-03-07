@@ -115,7 +115,7 @@
     height: 55px;
     background-color: #FF2D2D;
     border-radius: 6px;
-    color: #FFF;
+    color: #F6F2F2;
     font-size: 18px;
     letter-spacing: 0.3195px;
     font-weight: bold;
@@ -138,5 +138,18 @@
     }
     .logo-link {
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 472px) {
+    .menu-link {
+        padding: 0 45px;
+    }
+}
+
+@media (max-width: 324px) {
+    .menu {
+        padding: 0 20px;
+        flex-direction: column;
     }
 }
