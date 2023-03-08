@@ -7,7 +7,7 @@
 
 /* Header */
 
-.page-header-grey {
+.page__header_grey {
     background-color: #F6F2F2;
 }
 
@@ -35,7 +35,7 @@
     margin: 0;
 }
 
-.menu-item {
+.menu__item {
     display: flex;
     align-items: stretch;
     justify-content: center;
@@ -43,7 +43,11 @@
     min-height: 90px;
 }
 
-.menu-link {
+.menu__item:hover {
+    background-color: #FF3F40;
+}
+
+.menu__link {
     display: flex;
     align-items: center;
     padding: 0 25px;
@@ -56,13 +60,13 @@
     font-weight: bold;
 }
 
-.menu-item:hover {
-    background-color: #FF3F40;
-}
-
 /* Main */
 
-.first-section-page {
+.page__intro_grey {
+    background-color: #F6F2F2;
+}
+
+.intro {
     max-width: 1250px;
     width: 100%;
     display: flex;
@@ -73,18 +77,14 @@
     margin: 0 auto;
 }
 
-.page-grey {
-    background-color: #F6F2F2;
-}
-
-.left-part-section {
+.intro__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
 
-.heading {
+.intro__heading {
     max-width: 560px;
     width: 100%;
     min-height: 117px;
@@ -97,7 +97,7 @@
     margin: 100px 0 36px;
 }
 
-.main-text {
+.intro__text {
     max-width: 545px;
     width: 100%;
     min-height: 73px;
@@ -107,7 +107,7 @@
     margin-bottom: 64px;
 }
 
-.action-button {
+.intro__button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,7 +123,7 @@
     margin-bottom: 123px;
 }
 
-.logo-youtube {
+.link__logo {
     max-width: 551px;
     width: 100%;
     max-height: 356px;
@@ -133,16 +133,16 @@
 /* Media */
 
 @media (max-width: 1169px) {
-    .left-part-section {
+    .intro__content {
         margin: 0 auto;
     }
-    .logo-link {
+    .intro__link {
         margin: 0 auto;
     }
 }
 
 @media (max-width: 472px) {
-    .menu-link {
+    .menu__link {
         padding: 0 45px;
     }
 }
