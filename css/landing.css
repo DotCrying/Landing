@@ -304,6 +304,7 @@
 }
 .products__link_active {
     color: #FF2D2D;
+    animation: flash 1s linear infinite alternate;
 }
 .products__link:hover {
     color: #FF2D2D;
