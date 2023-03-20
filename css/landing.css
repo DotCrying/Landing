@@ -273,23 +273,30 @@
     margin: 0 auto;
 }
 
+.feature__line {
+    margin-top: 33px;
+}
+
 .line {
     width: 134px;
     height: 3px;
     background-color: #FF2D2D;
     border: none;
-    margin-top: 33px;
 }
 
 .feature__products-filter {
     display: flex;
     max-width: 850px;
     width: 100%;
-    margin: 0 auto 50px;
+    margin: 0 auto 35px;
     padding: 0;
     flex-wrap: wrap;
     justify-content: space-around;
     list-style: none;
+}
+
+.products__item {
+    margin-bottom: 15px;
 }
 
 .products__link {
@@ -395,6 +402,173 @@
 .product_1:hover, .product_2:hover, .product_3:hover, .product_4:hover, 
 .product_5:hover, .product_6:hover, .product_7:hover, .product_8:hover {
     animation: pulse 1s infinite ease-in-out alternate;
+}
+
+/* Team */
+
+.team {
+    max-width: 1250px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.team__content {
+    display: flex;
+    max-width: 478px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.team__title {
+    font-size: 42px;
+    text-transform: uppercase;
+    margin: 105px 0 35px;
+}
+
+.team__description {
+    font-size: 15.9953px;
+    line-height: 28px;
+    margin-bottom: 38px;
+}
+
+.team__line {
+    margin: 0 0 84px;
+}
+
+.team__persons {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.preson__photo {
+    max-width: 310px;
+    width: 100%;
+    min-height: 460px;
+    height: 100%;
+    background-image: url(../img/boss.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 46px;
+    margin-bottom: 105px;
+    cursor: pointer;
+}
+
+.persons__list {
+    max-width: 894px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.person__title {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 0.275px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.person__description {
+    max-width: 662px;
+    width: 100%;
+    font-size: 15.9953px;
+    line-height: 28px;
+    margin: 30px 0 46px;
+}
+
+.team__links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 370px;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 32px;
+    list-style: none;
+}
+
+.person__links {
+    margin-bottom: 15px;
+}
+
+.person__link {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 24px;
+    font-size: 18px;
+    line-height: 24px;
+    text-decoration: none;
+    padding: 0 5px;
+    color: #000;
+}
+.person__link:hover {
+    animation: flash 1s ease infinite alternate;
+    color: #FF0000;
+}
+
+.persons {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 894px;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.person__name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    color: #FFF;
+    height: 38px;
+    margin: 0;
+    text-align: center;
+    background-color: rgba(0,0,0,.5);
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 0px;
+    text-transform: uppercase;
+}
+
+.person {
+    display: flex;
+    align-items: flex-end;
+    max-width: 198px;
+    width: 100%;
+    min-height: 216px;
+    height: 100%;
+}
+
+.person_1 {
+    background-image: url(../img/person_1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.person_2 {
+    background-image: url(../img/person_2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.person_3 {
+    background-image: url(../img/person_3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.person_4 {
+    background-image: url(../img/person_4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.person_1:hover > .person__name, .person_2:hover > .person__name, 
+.person_3:hover > .person__name, .person_4:hover > .person__name {
+    visibility: visible;
 }
 
 /* Media */
