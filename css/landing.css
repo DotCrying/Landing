@@ -440,7 +440,7 @@
     flex-wrap: wrap;
 }
 
-.preson__photo {
+.person__photo {
     max-width: 310px;
     width: 100%;
     min-height: 460px;
@@ -540,6 +540,7 @@
     width: 100%;
     min-height: 216px;
     height: 100%;
+    margin-bottom: 20px;
 }
 
 .person_1 {
@@ -572,6 +573,15 @@
 }
 
 /* Media */
+
+@media (max-width: 1250px) {
+    .team__content {
+        margin: 0 auto;
+    }
+    .team__persons {
+        justify-content: center;
+    }
+}
 
 @media (max-width: 1190px) {
     .services__content {
