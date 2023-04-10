@@ -6,6 +6,18 @@
     overflow-x: hidden;
 }
 
+.title {
+    font-size: 42px;
+    text-transform: uppercase;
+}
+
+.line {
+    width: 134px;
+    height: 3px;
+    background-color: #FF2D2D;
+    border: none;
+}
+
 /* Header */
 
 .page__header_grey {
@@ -161,10 +173,8 @@
     width: 100%;
     min-height: 88px;
     height: 100%;
-    font-size: 42px;
     line-height: 55px;
     letter-spacing: 0.4px;
-    text-transform: uppercase;
     font-weight: bold;
     margin: 0 0 50px;
 }
@@ -256,8 +266,6 @@
 }
 
 .feature__title {
-    font-size: 42px;
-    text-transform: uppercase;
     letter-spacing: 0.38px;
     margin: 0 auto 28px;
     text-align: center;
@@ -274,13 +282,6 @@
 
 .feature__line {
     margin-top: 33px;
-}
-
-.line {
-    width: 134px;
-    height: 3px;
-    background-color: #FF2D2D;
-    border: none;
 }
 
 .feature__products-filter {
@@ -419,8 +420,6 @@
 }
 
 .team__title {
-    font-size: 42px;
-    text-transform: uppercase;
     margin: 105px 0 35px;
 }
 
@@ -681,9 +680,7 @@
 
 .feedback__title {
     font-weight: 700;
-    font-size: 42px;
     letter-spacing: 0.38px;
-    text-transform: uppercase;
     margin: 140px 0 46px;
 
 }
