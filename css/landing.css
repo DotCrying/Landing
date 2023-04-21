@@ -1,3 +1,9 @@
+/* General */
+
+html {
+    scroll-behavior: smooth;
+}
+
 .page {
     display: flex;
     flex-direction: column;
@@ -14,14 +20,20 @@
 .line {
     width: 134px;
     height: 3px;
-    background-color: #FF2D2D;
+    background-color: var(--main-color);
     border: none;
+}
+
+:root {
+    --main-color: #FF2D2D;
+    --background-light: #F6F2F2;
+    --background-dark: #303030;
 }
 
 /* Header */
 
 .page__header_grey {
-    background-color: #F6F2F2;
+    background-color: var(--background-light);
 }
 
 .header {
@@ -35,7 +47,7 @@
     min-height: 90px;
     box-sizing: border-box;
     margin: 0 auto;
-    background-color: #303030;
+    background-color: var(--background-dark);
 }
 
 .menu {
@@ -55,10 +67,6 @@
     height: 100%;
     min-height: 90px;
 }
-.menu__item:hover {
-    background-color: #FF3F40;
-    animation: flash 1s linear infinite alternate;
-}
 
 .menu__link {
     display: flex;
@@ -72,13 +80,67 @@
     letter-spacing: 0.49px;
     font-weight: bold;
 }
+.menu__link:hover {
+    background-color: #FF3F40;
+    animation: flash 1s linear infinite alternate;
+}
+
+/* Burger */
+
+.burger {
+    display: none;
+    position: relative;
+    width: 32px;
+    height: 24px;
+    cursor: pointer;
+    left: 2rem;
+    top: 2.5rem;
+    z-index: 20;
+}
+
+.burger span {
+    width: 100%;
+    height: 4px;
+    background-color: #E0E0E0;
+    border-radius: 12px;
+    display: block;
+    transition: background-color .2s ease-in-out;
+}
+.burger span::before,
+.burger span::after {
+    content: "";
+    width: 100%;
+    background-color: #E0E0E0;
+    display: block;
+    transition: all .2s ease-in-out;
+    border-radius: 12px;
+    height: 4px;
+}
+.burger span::before {
+    transform: translateY(-10px);
+
+}
+.burger span::after {
+    transform: translateY(10px);
+    margin-top: -4px;
+}
+
+.burger.active span {
+    background-color: transparent;
+}
+.burger.active span::before {
+    transform: rotateZ(45deg) translateY(0);
+}
+.burger.active span::after {
+    transform: rotateZ(-45deg) translateY(0);
+}
 
 /* Main */
 
 /* Intro */
 
 .page__intro_grey {
-    background-color: #F6F2F2;
+    background-color: var(--background-light);
 }
 
 .intro {
@@ -128,9 +190,9 @@
     align-items: center;
     width: 227px;
     height: 55px;
-    background-color: #FF2D2D;
+    background-color: var(--main-color);
     border-radius: 6px;
-    color: #F6F2F2;
+    color: var(--background-light);
     font-size: 18px;
     letter-spacing: 0.3195px;
     font-weight: bold;
@@ -198,7 +260,7 @@
     background-color: #FFF;
     border: 2px solid #FF0000;
     border-radius: 6px;
-    color: #FF2D2D;
+    color: var(--main-color);
     font-size: 18px;
     letter-spacing: 0.3195px;
     font-weight: bold;
@@ -310,11 +372,11 @@
     padding: 0 5px;
 }
 .products__link_active {
-    color: #FF2D2D;
+    color: var(--main-color);
     animation: flash 1s linear infinite alternate;
 }
 .products__link:hover {
-    color: #FF2D2D;
+    color: var(--main-color);
 }
 
 .products {
@@ -327,77 +389,38 @@
     flex-direction: row;
 }
 
-.product_1 {
-    background-image: url(../img/prod_1.jpg);
+.product {
     background-size: cover;
     background-repeat: no-repeat;
     width: 290px;
     height: 290px;
     margin: 10px;
     cursor: pointer;
+}
+
+.product_1 {
+    background-image: url(../img/prod_1.jpg);
 }
 .product_2 {
     background-image: url(../img/prod_2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 290px;
-    height: 290px;
-    margin: 10px;
-    cursor: pointer;
 }
 .product_3 {
     background-image: url(../img/prod_3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 290px;
-    height: 290px;
-    margin: 10px;
-    cursor: pointer;
 }
 .product_4 {
     background-image: url(../img/prod_4.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 290px;
-    height: 290px;
-    margin: 10px;
-    cursor: pointer;
 }
 .product_5 {
     background-image: url(../img/prod_5.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 290px;
-    height: 290px;
-    margin: 10px;
-    cursor: pointer;
 }
 .product_6 {
     background-image: url(../img/prod_6.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 290px;
-    height: 290px;
-    margin: 10px;
-    cursor: pointer;
 }
 .product_7 {
     background-image: url(../img/prod_7.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 290px;
-    height: 290px;
-    margin: 10px;
-    cursor: pointer;
 }
 .product_8 {
     background-image: url(../img/prod_8.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 290px;
-    height: 290px;
-    margin: 10px;
-    cursor: pointer;
 }
 .product_1:hover, .product_2:hover, .product_3:hover, .product_4:hover, 
 .product_5:hover, .product_6:hover, .product_7:hover, .product_8:hover {
@@ -539,31 +562,22 @@
     min-height: 216px;
     height: 100%;
     margin-bottom: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .person_1 {
     background-image: url(../img/person_1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
 }
 .person_2 {
     background-image: url(../img/person_2.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
 }
 .person_3 {
     background-image: url(../img/person_3.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
 }
 .person_4 {
     background-image: url(../img/person_4.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
 }
 .person_1:hover > .person__name, .person_2:hover > .person__name, 
 .person_3:hover > .person__name, .person_4:hover > .person__name {
@@ -580,7 +594,7 @@
 }
 
 .subscribe__background_black {
-    background-color: #303030;
+    background-color: var(--background-dark);
 }
 
 .subscribe__title {
@@ -598,7 +612,7 @@
     font-weight: 400;
     font-size: 16px;
     text-align: center;
-    color: #FFFFFF;
+    color: #FFF;
     margin: 16px 0 56px;
 }
 
@@ -635,7 +649,7 @@
     color: #2C2C2C;
 }
 .subscribe__input:invalid {
-    color: #FF2D2D;
+    color: var(--main-color);
 }
 
 .subscribe__button {
@@ -651,7 +665,7 @@
     text-transform: uppercase;
     text-align: center;
     color: #FFF;
-    background-color: #FF2D2D;
+    background-color: var(--main-color);
     border: 0;
     border-radius: 6px;
     cursor: pointer;
@@ -737,7 +751,7 @@
     color: #000;
 }
 .feedback__input:invalid {
-    color: #FF2D2D;
+    color: var(--main-color);
 }
 
 .feedback__textarea {
@@ -764,7 +778,7 @@
     color: #000;
 }
 .feedback__textarea:invalid {
-    color: #FF2D2D;
+    color: var(--main-color);
 }
 
 .feedback__button {
@@ -775,7 +789,7 @@
     min-height: 74px;
     height: 100%;
     border: 0;
-    background-color: #FF2D2D;
+    background-color: var(--main-color);
     border-radius: 6px;
     text-transform: uppercase;
     text-align: center;
@@ -792,7 +806,7 @@
 
 .feedback__contacts {
     grid-area: contacts;
-    background-color: #303030;
+    background-color: var(--background-dark);
     max-width: 580px;
     width: 100%;
     max-height: 484px;
@@ -834,7 +848,7 @@
 /* Footer */
 
 .footer__backgroung_grey {
-    background-color: #303030;
+    background-color: var(--background-dark);
 }
 
 .footer {
@@ -858,6 +872,7 @@
     color: #B8B8B8;
     box-sizing: border-box;
     padding: 0 1em;
+    text-align: center;
 }
 
 .footer__links {
@@ -1074,6 +1089,28 @@
     }
 }
 
+@media(max-width: 480px) {
+    .header {
+        justify-content: flex-start;
+        position: relative;
+    }
+    .menu {
+        display: none;
+        background-color: var(--background-dark);
+    }
+    .burger {
+        display: block;
+    }
+    .menu-opened {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        animation: .3s fadeIn forwards;
+    }
+}
+
 @media (max-width: 472px) {
     .menu__link {
         padding: 0 45px;
@@ -1186,4 +1223,15 @@
       0%, 100% {transform: translateX(0);}
       10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
       20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+@keyframes fadeIn {
+    0% {
+
+        transform: translateY(-100%);
+    }
+    100% {
+ 
+        transform: translateY(0%);
+    }
 }
