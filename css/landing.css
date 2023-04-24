@@ -33,7 +33,9 @@ html {
 /* Header */
 
 .page__header_grey {
-    background-color: var(--background-light);
+    position: sticky;
+    top: 0;
+    z-index: 9;
 }
 
 .header {
@@ -141,6 +143,9 @@ html {
 
 .page__intro_grey {
     background-color: var(--background-light);
+    position: relative;
+    top: -90px;
+    padding-top: 90px;
 }
 
 .intro {
@@ -900,7 +905,7 @@ html {
 /* Media */
 @media (max-width: 1290px) {
     .page__intro_grey {
-        padding: 0 1em;
+        padding: 90px 1em 0;
     }
 }
 
