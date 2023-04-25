@@ -743,10 +743,6 @@ html {
     border: 0;
     background-color: rgba(0,0,0,.1);
     border-radius: 6px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 28px;
-    color: #000;
 }
 .feedback__input:first-child {
     grid-area: name;
@@ -776,10 +772,6 @@ html {
     background-color: rgba(0,0,0,.1);
     border-radius: 6px;
     resize: none;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 28px;
-    color: #000;
 }
 .feedback__textarea::placeholder {
     font-weight: 500;
