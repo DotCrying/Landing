@@ -1,7 +1,6 @@
 const burgerMenu = () => {
     const burgerBtn = document.querySelector('.burger');
     const menuList = document.querySelector('.menu');
-    const menuLink = document.querySelector('.menu__link');
 
     const disableScroll = () => {
         document.body.style.overflow = 'hidden';
@@ -24,17 +23,11 @@ const burgerMenu = () => {
         }
     })
 
-    // menuLink.addEventListener('click', () => {
-    //     document.body.style.overflow = 'auto';
-    //     document.body.style.userSelect = 'auto';
-    // })
-
-    // menuLink.addEventListener('click', enableScroll)
-
     window.addEventListener('click', event => {
         if(!event.target.matches('.active span')) {
             menuList.classList.remove('menu-opened');
             burgerBtn.classList.remove('active');
+            enableScroll();
         }
     })
 }
