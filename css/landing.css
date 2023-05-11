@@ -4,12 +4,15 @@ html {
     scroll-behavior: smooth;
 }
 
+#home {
+    background-color: #fff;
+}
+
 .page {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
-    overflow-x: hidden;
 }
 
 .title {
@@ -142,6 +145,150 @@ html {
     transform: rotateZ(-45deg) translateY(0);
 }
 
+/* Popup */
+
+.popup {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(246, 242, 242, 0.25);
+    transform: scaleZ(0);
+    transition: .3s ease-in-out;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+}
+.popup--visible {
+    z-index: 99;
+    opacity: 1;
+    left: 0;
+    transform: scaleZ(1);
+}
+
+.popup__form {
+    display: grid;
+    position: sticky;
+    top: 3rem;
+    grid-area: form;
+    grid-template-areas:
+        'name'
+        'email'
+        'textarea'
+        'button';
+    gap: 1.5em;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+    justify-items: center;
+    border: solid var(--background-dark);
+    border-radius: 6px;
+    background-color: var(--background-light);
+    padding-bottom: 2em;
+}
+
+.cross {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: transparent;
+    grid-area: close-button;
+    position: absolute;
+    top: 0;
+    left: -15%;
+    /* width: 45px;
+    height: 45px; */
+    z-index: 999;
+    padding: 0;
+    margin: 0;
+}
+.cross svg {
+    width: 45px;
+    height: 45px;
+    fill: none;
+    stroke: #303030;
+}
+.cross:hover > svg {
+    animation: elastic-spin 2s infinite ease;
+}
+
+.popup__input {
+    font-family: 'Open Sans', sans-serif;
+    max-width: 290px;
+    width: 100%;
+    min-height: 68px;
+    padding-left: 50px;
+    border: 0;
+    background-color: rgba(0,0,0,.1);
+    border-radius: 6px;
+}
+.popup__input:nth-child(2) {
+    grid-area: name;
+    margin-top: 2em;
+}
+.popup__input:nth-child(3) {
+    grid-area: email;
+}
+.popup__input::placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    color: #000;
+}
+.popup__input:invalid {
+    color: var(--main-color);
+}
+
+.popup__textarea {
+    grid-area: textarea;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 290px;
+    width: 100%;
+    min-height: 218px;
+    padding-left: 50px;
+    padding-top: 32px;
+    border: 0;
+    background-color: rgba(0,0,0,.1);
+    border-radius: 6px;
+    resize: none;
+}
+.popup__textarea::placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    color: #000;
+}
+.popup__textarea:invalid {
+    color: var(--main-color);
+}
+
+.popup__button {
+    grid-area: button;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 342px;
+    width: 100%;
+    min-height: 74px;
+    height: 100%;
+    border: 0;
+    background-color: var(--main-color);
+    border-radius: 6px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 34px;
+    letter-spacing: 0.317px;
+    cursor: pointer;
+}
+.popup__button:hover {
+    animation: flash 1s linear infinite alternate;
+}
+
 /* Main */
 
 /* Intro */
@@ -195,7 +342,6 @@ html {
 }
 
 .intro__button {
-    display: flex;
     justify-content: center;
     align-items: center;
     width: 227px;
@@ -208,9 +354,16 @@ html {
     font-weight: bold;
     text-decoration: none;
     margin-bottom: 123px;
+    border: 0;
 }
 .intro__button:hover {
     animation: flash 1s linear infinite alternate;
+}
+.intro__button_link {
+    display: none;
+}
+.intro__button_popup {
+    display: flex;
 }
 
 .intro__video {
@@ -221,9 +374,16 @@ html {
     border: 0;
 }
 
+.button__link {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    color: var(--background-light);
+}
+
 /* Services */
 
 .services {
+    
     max-width: 1250px;
     width: 100%;
     display: flex;
@@ -821,7 +981,9 @@ html {
     width: 100%;
     max-height: 484px;
     height: 100%;
-    padding-right: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contacts {
@@ -832,8 +994,6 @@ html {
     width: 100%;
     max-height: 202px;
     height: 100%;
-    margin-top: 140px;
-    margin-left: 82px;
     justify-content: space-between;
 }
 
@@ -1029,6 +1189,21 @@ html {
     }
     .subscribe__description {
         padding: 0 1em 0;
+    }
+    .intro__button_popup {
+        display: none;
+    }
+    .intro__button_link {
+        display: flex;
+    }
+    .popup__form {
+        border: none;
+    }
+    .popup__textarea {
+        padding: 0;
+    }
+    .popup__input {
+        padding: 0;
     }
 }
 

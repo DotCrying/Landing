@@ -1,16 +1,36 @@
+const popUpBtn = document.querySelector('.intro__button');
+const popUp = document.querySelector('.popup');
+const cross = document.querySelector('.cross');
+const disableScroll = () => {
+    document.body.style.overflow = 'hidden';
+    document.body.style.userSelect = 'none';
+};
+const enableScroll = () => {
+    document.body.style.overflow = 'auto';
+    document.body.style.userSelect = 'auto';
+};
+
+popUpBtn.addEventListener('click', () => {
+    popUp.classList.toggle('popup--visible');
+    disableScroll();
+})
+cross.addEventListener('click', () => {
+    popUp.classList.remove('popup--visible');
+    enableScroll();
+})
+
 const burgerMenu = () => {
     const burgerBtn = document.querySelector('.burger');
     const menuList = document.querySelector('.menu');
-    const menuLink = document.querySelector('.menu__link');
+    const burgerLink = document.querySelectorAll('.menu__link');
 
-    const disableScroll = () => {
-        document.body.style.overflow = 'hidden';
-        document.body.style.userSelect = 'none';
-    }
-    const enableScroll = () => {
-        document.body.style.overflow = 'auto';
-        document.body.style.userSelect = 'auto';
-    }    
+    burgerLink.forEach(link => {
+        link.addEventListener('click', () => {
+            menuList.classList.remove('menu-opened');
+            burgerBtn.classList.remove('active');
+            enableScroll();
+        })
+    })
 
     burgerBtn.addEventListener('click', () => {
         if(burgerBtn.classList.contains('active')) {
@@ -23,21 +43,7 @@ const burgerMenu = () => {
             disableScroll();
         }
     })
-
-    // menuLink.addEventListener('click', () => {
-    //     document.body.style.overflow = 'auto';
-    //     document.body.style.userSelect = 'auto';
-    // })
-
-    // menuLink.addEventListener('click', enableScroll)
-
-    window.addEventListener('click', event => {
-        if(!event.target.matches('.active span')) {
-            menuList.classList.remove('menu-opened');
-            burgerBtn.classList.remove('active');
-        }
-    })
-}
+};
 
 burgerMenu();
 

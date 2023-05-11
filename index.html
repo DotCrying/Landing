@@ -10,18 +10,19 @@
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./css/landing.css">
+    <link rel="icon" type="image/png" sizes="512x512" href="./img/page-icon.png">
     <script async src="./js/landing.js"></script>
     <title>Landing project</title>
 </head>
 
-<body class="page">
+<body class="page" id="start">
 
     <div class="page__header_grey">
         <header class="header">
             <nav>
                 <ul class="menu">
                     <li class="menu__item">
-                        <a class="menu__link" href="#home">Home</a>
+                        <a class="menu__link" href="#start">Home</a>
                     </li>
                     <li class="menu__item">
                         <a class="menu__link" href="#portfolio">Portfolio</a>
@@ -40,7 +41,27 @@
         </header>
     </div>
 
-    <main id="home">
+    <div class="popup">
+        <form class="popup__form">
+            <button class="cross" type="button">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" />
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M16 8L8 16M12 12L16 16M8 8L10 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                            stroke="#303030" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                </svg>
+            </button>
+            <input class="popup__input" type="text" name="name" placeholder="Name" required>
+            <input class="popup__input" type="email" name="email" placeholder="Your Mail" required>
+            <textarea class="popup__textarea" placeholder="Type your message" required></textarea>
+            <button class="popup__button" type="submit">Send message</button>
+        </form>
+    </div>
+
+    <main>
 
         <div class="page__intro_grey">
             <section class="intro">
@@ -50,7 +71,8 @@
                         Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt
                         ut labore et. ectetur adig ipis cing elit, sed do eiusmod tempor incididunt.
                     </p>
-                    <a class="intro__button" href="">Contact Us</a>
+                    <button class="intro__button intro__button_popup"><a class="button__link" href="#start">Contact Us</a></button>
+                    <a class="intro__button intro__button_link" href="#contact">Contact Us</a>
                 </div>
                 <iframe class="intro__video" src="https://www.youtube.com/embed/ZnWfmkMXbyY?autoplay=1&mute=1"
                     title="YouTube video player"
@@ -69,7 +91,8 @@
                     Lorem ni ipsum dolor sit amet, consectetur adipis cing elit, ed doi eiusmod tempor incididunt ut
                     labore et.
                 </p>
-                <a class="services__button" href="">Learn More</a>
+                <a class="services__button" href="https://innopolis.university/?ysclid=lhf3t951nb326466449"
+                    target="_blank">Learn More</a>
             </div>
             <div class="services__blocks">
                 <section class="service">
